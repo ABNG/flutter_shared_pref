@@ -14,15 +14,7 @@ class UserPreferences {
     _prefs = await SharedPreferences.getInstance();
   }
 
-  get data {
-    return _prefs.getString('data') ?? 'enter something...';
-  }
-
-  set data(String value) {
-    _prefs.setString('data', value);
-  }
-
-  Future setJwtToken(String value) {
-    return _prefs.setString('jwtToken', value);
+  SharedPreferences get pref {
+    return _prefs;
   }
 }

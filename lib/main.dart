@@ -41,8 +41,10 @@ class _MyAppState extends State<MyApp> {
                       )),
                 ),
                 RaisedButton(
-                  onPressed: () {
-                    UserPreferences().data = textEditingController.text;
+                  onPressed: () async{
+                   await UserPreferences()
+                              .pref
+                              .setString("token", response.data["token"]);
                   },
                   child: Text("Save Data"),
                 ),
